@@ -1,14 +1,16 @@
 #include "array.h"
 
+
 template<class T>
-void ArrayData<T>::resize(unsigned n){
+void ArrayData<T>::resize(unsigned n)
+{
 	if (n == size)
 		return ;
 	T* odata = data;
 	data = new T[n];
 	copy(odata, size > n ? n : size);
 	delete[] odata;
-	size = n;
+	size = n;// nothing
 }
 
 template<class T>
